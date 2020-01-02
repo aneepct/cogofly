@@ -1,0 +1,643 @@
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.paddingTB70{
+    padding: 50px 0;
+}
+
+.marginB15{
+    margin-bottom: 15px;
+}
+
+.btn.focus, .btn:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus, 
+.btn-primary:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-primary.dropdown-toggle:focus{
+    box-shadow: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #72c2ea;
+    border-color: #72c2ea;
+}
+
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled).active, 
+.btn-primary:not(:disabled):not(.disabled):active, 
+.show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #4093bd;
+    border-color: #4093bd;
+}
+
+
+.bgMainWrappImage{
+    background-image: url(../img/slider-1.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    padding: 20px 0px;
+}
+.navbar ul li.nav-item {
+    background-color: #72c2ea;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 5px 15px !important;
+    color: #fff;
+}
+
+.navbar ul li.nav-item.dropdown {
+    background-color: transparent;
+} 
+
+.navbar ul li.nav-item.dropdown > a{
+    padding: 5px 0 !important;
+}
+.navbar-nav .dropdown-menu{
+    padding: 0;
+}
+.navbar ul li a.dropdown-item {
+    padding: 8px;
+}
+
+.navbar ul li.nav-item .dropdown-toggle::after{
+    display: none;
+}
+
+.wrapHomeSection{
+    text-align: center;
+    padding: 150px 10px 115px 10px;
+}
+
+.title h2 {
+    color: #fff;
+    font-size: 38px;
+    font-weight: 800;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.subtitle h3{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.title.textBlack h2 {
+    color: #333333;
+}
+
+.wrapHomeSection .title h2 {
+    margin-bottom: 25px;
+}
+
+.wrapHomeSection .formSection{
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.andOrGroup p{
+    font-size: 14px;
+}
+
+.andOrGroup span{
+    display: block;
+    font-size: 26px;
+    line-height: 22px;
+}
+
+.wrapHomeSection .formSection .form-row>.col, 
+.wrapHomeSection .formSection .form-row>[class*=col-] {
+    padding: 0 10px;
+    position: relative;
+}
+.wrapHomeSection .formSection .form-group,
+.wrapHomeSection .formSection p {
+    margin: 0;
+}
+
+
+.wrapHomeSection .formSection .btn{
+    padding: 9px 62px;
+}
+
+.wrapHomeSection .formSection .form-control{
+    height: 45px;
+}
+
+.wrapHomeSection .formSection .form-group .fa {
+    position: absolute;
+    top: 16px;
+    right: 25px;
+    color: #8b8b8b;
+}
+
+.wrapHomeSection h5 {
+    font-size: 20px;
+    color: #fff;
+    margin: 25px 0;
+    font-weight: 400;
+}
+
+
+
+.wrapHomeSection p.reservation {
+    font-size: 16px;
+    color: #fff;
+    margin: 25px 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    /* font-family: 'Arima Madurai', cursive; */
+}
+
+.wrapHomeSection p.reservation a{
+    color: #b3e0f7;
+}
+
+
+a.goodToKnow {
+    position: absolute;
+    right: 28px;
+    bottom: 30px;
+    color: #fff;
+}
+
+.bgConcept {
+    background-image: url('../img/concept.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 75px;
+
+}
+
+.textBlog .fa{
+    color: #fff;
+    background-color: #72c2ea;
+    padding: 29px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 22px;
+}
+
+.textBlog p{
+    color: #fff;
+    margin: 25px 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.textBlog ul{
+    margin: 25px 0 0 0;
+    text-align: left;
+}
+.textBlog ul li{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+
+.owl-carousel {
+    margin-top: 40px;
+}
+
+.owl-carousel .item .textBlog {
+    padding: 25px 65px;
+}
+.owl-theme .owl-controls .owl-page{
+    vertical-align: middle;
+}
+
+.owl-theme .owl-controls .owl-buttons .fa {
+    line-height: 16px;
+    font-size: 22px;
+}
+.owl-theme .owl-controls .owl-buttons div{
+    opacity: 0.5;
+}
+.owl-theme .owl-controls .owl-buttons .owl-prev{
+    position: absolute;
+    left: -35%;
+    top: 50%;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-next{
+    position: absolute;
+    right: -35%;
+    top: 50%;
+}
+
+
+.owl-theme .owl-controls .owl-page span {
+    background-color: #fff;
+    opacity: 1;
+    margin: 5px 4px;
+}
+
+.owl-theme .owl-controls .owl-page.active span{
+    background-color: #444;
+    border: 2px solid #fff;
+    width: 15px;
+    height: 15px;
+}
+.customNavigation{
+    margin-top: 25px;
+}
+.customNavigation a.btn {
+    background-color: #72c2ea;
+    color: #fff;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.bgConcept .subtitle h3,
+.bgadvantages .subtitle h3{
+    margin-top: 25px;
+}
+
+.bgcommunity {
+    background-image: url('../img/community.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 135px 0;
+}
+
+
+
+.bgcommunity .subtitle p{
+    color: #333333;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bgcommunity p.text{
+    color: #333333;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding-right: 26px;
+}
+
+
+.bgcounter {
+    background-image: url('../img/counter.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 90px 0;
+}
+
+.bgadvantages {
+    background-image: url('../img/advantages.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+
+.bgHowWork {
+    background-image: url('../img/howWork.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+
+.counter {
+    padding: 20px 0;
+    border-radius: 0;
+}
+
+.count-title {
+    font-size: 36px;
+   
+    color: #fff;
+    font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #fff;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.bgGray {
+    background-color: #f8f8f8;
+    padding: 70px 0;
+    
+}
+
+.observationSection .obvBox {
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 3px;
+    text-align: center;
+    min-height: 375px;
+}
+
+.observationSection .obvBox img {
+    border-radius: 5px;
+    padding: 0;
+    width: 100%;
+}
+
+.observationSection .obvBox p.text {
+    color: #333;
+    padding: 15px;
+    margin: 0;
+}
+
+.bgHowWork .title {
+    margin-bottom: 35px;
+}
+
+.bgHowWork .owl-carousel {
+    margin-top: 20px; 
+}
+.bgHowWork .owl-carousel .item .textBlog {
+    padding: 0 65px;
+}
+
+.bgHowWork .owl-carousel .item .textBlog p {
+    margin: 10px 0;
+}
+
+.bgHowWork .textBlog h5 {
+    font-size: 20px;
+    color: #fff;
+    margin: 30px 0 0 0;
+}
+
+.bgHowWork .owl-theme .owl-controls .owl-buttons .owl-prev,
+.bgHowWork .owl-theme .owl-controls .owl-buttons .owl-next {        
+    top: 30%;
+}
+
+.resultImageBox,
+.projectsImageBox {
+    cursor: pointer;
+}
+
+.resultImageBox .topBox {
+    left: 18px;
+    top: 5px;
+    position: absolute;
+    z-index: 100;
+}
+
+.resultImageBox .bottomBox {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
+
+
+.resultImageBox .topBox h4 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0px 1px 1px #3c3c3c;
+}
+
+.resultImageBox .topBox img {
+    display: inline-block;
+    vertical-align: sub;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+}
+
+.resultImageBox .topBox p {
+    margin: 0;
+    color: #fff;
+    text-shadow: 0px 1px 1px #3c3c3c;
+}
+
+.resultImageBox .bottomBox .offer {
+    background-color: #2499d3;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 1px #cccccc;
+    margin-bottom: 10px; 
+    text-align: right;
+}
+
+.resultImageBox .bottomBox .price {
+    background-color: #383838;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 1px #cccccc;
+    text-align: right;
+}
+
+.resultImageBox .bottomBox .offer p,
+.resultImageBox .bottomBox .price p {
+    margin: 0;
+    line-height: 20px;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    background: #dfdcdc;
+    padding: 5px 17px;
+    border-radius: 50%;
+    font-size: 20px;
+    zoom: 0;
+    margin: 0;
+    color: #333;
+}
+
+.resultBox .owl-theme .owl-controls .owl-buttons div{
+    opacity: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.resultBox .owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: -24px;
+    top: 45%;
+}
+
+.resultBox .owl-theme .owl-controls .owl-buttons .owl-next {
+    right: -20px;
+    top: 45%;
+}
+
+.resultBox .owl-carousel {
+    margin: 0;
+}
+
+.resultBox .owl-carousel .item {
+    margin: 0 8px;
+}
+
+.resultBox .title h4 {
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.resultBox .title p {
+    color: #838383;
+}
+
+.bottomlink {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultBox .bottomlink p{
+    color: #838383;
+}
+
+.resultBox .bottomlink a{
+    color: #838383;
+    font-weight: 500;
+}
+
+.resultBox .owl-carousel .item img{
+    border-radius: 7px;
+    width: 100%;
+    height: auto;
+}
+
+.resultBox .projectsImageBox h5 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 10px;
+}
+
+.resultBox .projectsImageBox p {
+    font-size: 14px;
+    margin: 10px;
+}
+
+.bgBlack {
+    background-color: #2e2e2e;
+    padding: 50px 0 0 0;
+}
+
+.footerLinkList {
+    padding: 0;
+    text-align: center;
+}
+
+
+ul.footerLinkList li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 5px 30px;
+}
+
+ul.footerLinkList li a{
+    color: #a0a0a0;
+}
+
+.shareLink {
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
+
+.shareLink p{
+    font-size: 14px;
+    color: #fff;
+    margin: 0;    
+}
+.shareLink .shareLinkList{
+    padding: 0;
+    margin: 9px 0 35px 0;  
+}
+
+.shareLink .shareLinkList li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px 0;
+    width: 35px; 
+    margin: 0 2px; 
+}
+
+
+.shareLink .shareLinkList li.facebook{
+    background-color: #3b5998;
+}
+.shareLink .shareLinkList li.twitter{
+    background-color: #55acee;
+}
+.shareLink .shareLinkList li.instagram{
+    background-color: #3e729b;
+}
+.shareLink .shareLinkList li.pinterest{
+    background-color: #d61f27;
+}
+
+.shareLink .shareLinkList li.google{
+    background-color: #e94d3a;
+}
+
+
+
+
+
+
+
+.shareLink .shareLinkList li a{
+    color: #fff;
+    font-size: 16px;
+}
+
+.copyright {
+    background-color: #2e2e2e;
+    border-top: 1px solid #bcbcbc; 
+    padding: 10px;
+    text-align: center;
+}
+
+.copyright p{
+    margin: 0;    
+    color: #fff;
+}
+
+.partners .title.textBlack h2{
+    margin-bottom: 25px;
+}
+
+.partners .owl-theme .owl-controls .owl-buttons .owl-prev,
+.partners .owl-theme .owl-controls .owl-buttons .owl-next{
+    top: 25%;
+}
