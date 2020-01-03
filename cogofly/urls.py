@@ -21,10 +21,11 @@ from django.utils.translation import gettext_lazy as _
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
+    path('social-auth', include('social_django.urls', namespace="social")),
     # path(r'', include('frontend.urls')),
 ]
 
 urlpatterns += i18n_patterns(
     # path(_('admin/'), admin.site.urls),
-    path(_(r''), include('frontend.urls')),
+    path(_(r''), include(('frontend.urls', 'frontend'), namespace='frontend')),
 )
