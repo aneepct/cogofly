@@ -21,7 +21,8 @@ def index(request):
 
 
 def social_api_callback(request):
-    return JsonResponse(request.user.email, safe=False)
+    # return JsonResponse(request.user.email, safe=False)
+    return HttpResponseRedirect('/')
 
 
 def login_view(request):
