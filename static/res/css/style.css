@@ -46,7 +46,7 @@ body{
 }
 
 .navbar {
-    padding: 20px 0px;
+    padding: 20px;
 }
 .navbar ul li.nav-item {
     background-color: #72c2ea;
@@ -640,4 +640,190 @@ ul.footerLinkList li a{
 .partners .owl-theme .owl-controls .owl-buttons .owl-prev,
 .partners .owl-theme .owl-controls .owl-buttons .owl-next{
     top: 25%;
+}
+
+.logBox-dialog {
+    width: 40%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+}
+.loginBox {
+    padding: 25px 25px 50px 25px;
+}
+.loginBox .logBox-header {    
+    padding: 8px 15px;
+    text-align: center;
+}
+
+.loginBox .form-group {
+    position: relative;
+}
+
+.loginBox .form-group .fa { 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    text-align: center;
+    color: #acafb3;
+}
+
+.loginBox .btn {
+    width: 100%;
+    margin: 8px 0;
+}
+
+
+.loginBox .orbox {
+    position: relative;
+}
+
+.loginBox .orClass{
+    position: absolute;
+    top: 50%;
+    right: 42%;
+    bottom: auto;
+    left: auto;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #acafb3;
+}
+
+.loginBox a.forgot {
+    float: right;
+}
+
+.loginBox a.forgot,
+.loginBox p a {
+    color: #00aaff;
+}
+
+.loginBox .btn-facebook {
+    background-color: #4568B2;
+    border-color: #4568B2;
+}
+
+.loginBox .btn-facebook:hover,
+.loginBox .btn-facebook:hover, 
+.loginBox .btn-facebook:not(:disabled):not(.disabled).active, 
+.loginBox .btn-facebook:not(:disabled):not(.disabled):active, 
+.loginBox .show>.btn-facebook.dropdown-toggle {
+    background-color: #284b96;
+    border-color: #284b96;
+}
+
+.loginBox .btn-google {
+    background-color: #dd4b39;
+    border: 2px solid #dd4b39;
+    color: #fff;
+}
+
+.loginBox .btn-google:hover,
+.loginBox .btn-google:hover, 
+.loginBox .btn-google:not(:disabled):not(.disabled).active, 
+.loginBox .btn-google:not(:disabled):not(.disabled):active, 
+.loginBox .show>.btn-google.dropdown-toggle {
+    background-color: #c43927;
+    border-color: #c43927;
+}
+
+
+.loginBox .btn-twitter {
+    background-color: #1C9DEB;
+    border-color: #1C9DEB;
+}
+
+.loginBox .btn-twitter:hover,
+.loginBox .btn-twitter:hover, 
+.loginBox .btn-twitter:not(:disabled):not(.disabled).active, 
+.loginBox .btn-twitter:not(:disabled):not(.disabled):active, 
+.loginBox .show>.btn-twitter.dropdown-toggle  {
+    background-color: #187fc0;
+    border-color: #187fc0;
+}
+
+
+.loginBox .btn-instagram {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0000e+0,d80056+49,c0009d+100 */
+background: #f0000e; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #f0000e 0%, #d80056 49%, #c0009d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #f0000e 0%,#d80056 49%,#c0009d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(50deg,  #f0000e 0%,#d80056 49%,#c0009d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0000e', endColorstr='#c0009d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    border-color: #f0000e;
+}
+
+.loginBox .btn-instagram:hover {
+   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0000e+0,d80056+49,c0009d+100 */
+background: #f0000e; /* Old browsers */
+background: -moz-linear-gradient(50deg,  #f0000e 0%, #d80056 49%, #c0009d 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(50deg,  #f0000e 0%,#d80056 49%,#c0009d 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(100deg,  #f0000e 0%,#d80056 49%,#c0009d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0000e', endColorstr='#c0009d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    border-color: #f0000e;
+}
+
+
+.loginBox .btn-linkedin {
+    background-color: #0078B1;
+    border-color: #0078B1;
+}
+
+
+.loginBox .btn-linkedin:hover,
+.loginBox .btn-linkedin:hover, 
+.loginBox .btn-linkedin:not(:disabled):not(.disabled).active, 
+.loginBox .btn-linkedin:not(:disabled):not(.disabled):active, 
+.loginBox .show>.btn-linkedin.dropdown-toggle {
+    background-color: #055c85;
+    border-color: #055c85;
+}
+
+
+
+.loginBox .btn .fa {
+    margin-right: 6px;
+}
+
+
+
+
+
+.bgloginImage {
+    background-image: url(../img/login-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.socialLinks {
+    padding: 0;
+    margin: 25px 0;
+    text-align: center;
+}
+
+
+.socialLinks li {
+    display: inline-block;
+    vertical-align: middle;
+    list-style-type: none;
+    margin: 0 12px;
+}
+
+.socialLinks li a {
+    padding: 12px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.socialLinks li a .fa {
+    font-size: 24px;
 }

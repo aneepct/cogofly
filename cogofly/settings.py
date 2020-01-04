@@ -61,17 +61,18 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOpenId',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.google.GoogleOAuth',
+    'social_core.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/social_api_callback'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '601938546938466'        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '9420efb3f2be1b9557bb54d8f11e952d'  # App Secret
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link'] # add this
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email'] # add this
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {       # add this
     'fields': 'id, name, email, picture.type(large), link'
 }
@@ -82,8 +83,27 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [                 # add this
     ('link', 'profile_url'),
 ]
 
+SOCIAL_AUTH_INSTAGRAM_KEY = '601938546938466'         #Client ID
+SOCIAL_AUTH_INSTAGRAM_SECRET = '9420efb3f2be1b9557bb54d8f11e952d'  #Client SECRET
+SOCIAL_AUTH_INSTAGRAM_EXTRA_DATA = [('user', 'user')]
+
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1080844116772-useca481abtnvfcpijq8ld3na5a56u9t.apps.googleusercontent.com'        # App ID
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'SVVmCOxOGKEVE1Vdm-i70x4M'  # App Secret
+
+SOCIAL_AUTH_TWITTER_KEY = '9bGRsN61hxYB8lLJm1Oo7oBlL'
+SOCIAL_AUTH_TWITTER_SECRET = 'lfXLqPqFRVXDTRIQkHuRNuOUzzo89wAQwr1vTsGl2oio3eHIP5'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '81pu1cef67t92t'         #Client ID
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'WlXQiOS26suX46Qu'  #Client Secret
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_liteprofile', 'r_emailaddress']
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_FIELD_SELECTORS = ['email-address', 'formatted-name', 'public-profile-url', 'picture-url']
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [
+#     ('id', 'id'),
+#     ('formattedName', 'name'),
+#     ('emailAddress', 'email_address'),
+#     ('pictureUrl', 'picture_url'),
+#     ('publicProfileUrl', 'profile_url'),
+# ]
 
 ROOT_URLCONF = 'cogofly.urls'
 

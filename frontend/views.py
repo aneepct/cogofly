@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 from django.utils.translation import ugettext as _
 
@@ -17,7 +17,21 @@ def index(request):
         return HttpResponseRedirect('/home')
     else:
         context = {'login_form': LoginForm(), 'register_form': RegisterForm()}
-        return render(request, 'layout/base.html', context)
+        return render(request, 'landing.html', context)
+
+
+def social_api_callback(request):
+    return JsonResponse(request.user.email, safe=False)
+
+
+def login_view(request):
+    context = {'login_form': LoginForm()}
+    return render(request, 'login.html', context)
+
+
+def register_view(request):
+    context = {'register_form': RegisterForm()}
+    return render(request, 'register.html', context)
 
 
 def login(request):
@@ -29,16 +43,22 @@ def login(request):
         # Validate the form
         if form.is_valid():  # 3
             email = request.POST['email']
-            user = authenticate(username = email.replace('@', '_at_'), password=request.POST['password'])
-            # return redirect('/home')
-            if user:
-                auth_login(request, user)
-                return HttpResponseRedirect('/home')
-            else:
+            try:
+                u = User.objects.get(username=email.replace('@', '_at_'))
+                user = authenticate(username = email.replace('@', '_at_'), password=request.POST['password'])
+                # return redirect('/home')
+                if user:
+                    auth_login(request, user)
+                    return HttpResponseRedirect('/home')
+                else:
+                    messages.error(request, 'Invalid username or password.!')
+                    return HttpResponseRedirect('/login_view')
+            except User.DoesNotExist:
                 messages.error(request, 'User not found.!')
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/login_view')
         else:
-            return redirect('/')
+            messages.error(request, 'Invalid username or password.!')
+            return HttpResponseRedirect('/login_view')
 
 
 def register(request):
@@ -52,18 +72,18 @@ def register(request):
     if password != confirm_password:
         err = _('Passwords do not match.!')
         messages.error(request, err)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/register_view')
 
     # Si username déjà utilisé, erreur :
     if len(User.objects.filter(username__exact=username)):
-        err = _('Username already registered.!')
+        err = _('User already registered.!')
         messages.error(request, err)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/register_view')
     # Si email déjà utilisé, erreur :
     if len(User.objects.filter(email__exact=email)):
         err = _('This email is already used.!')
         messages.error(request, err)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/register_view')
 
     # Création de l'utilisateur :
     try:
@@ -73,12 +93,12 @@ def register(request):
     except IntegrityError:
         err = _('Username already registered.!')
         messages.error(request, err)
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/register_view')
 
     user.is_active = True
     user.save()
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/register_view')
 
 
 @login_required(login_url='/')
