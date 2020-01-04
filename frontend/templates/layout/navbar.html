@@ -1,0 +1,41 @@
+	{% load static %}
+	{% load i18n %}
+
+	{% get_available_languages as LANGUAGES %}
+	{% get_language_info_list for LANGUAGES as languages %}
+	{% get_current_language as LANGUAGE_CODE %}
+
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">
+				<img src="{% static 'res/img/cogofly-logo.png' %}" alt="cogofly-logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"> <i class="fa fa-bars" aria-hidden="true"></i> </span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="mr-auto"></div>
+
+				<ul class="navbar-nav my-2 my-lg-0">
+						<li class="nav-item">
+								<a class="nav-link" href="#">Help <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<img src="{% static 'res/img/'|add:LANGUAGE_CODE|add:'.png' %}" alt="">
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										{% for language in languages %}
+												<a class="dropdown-item" href="/{{ language.code }}"> <img src="{% static 'res/img/'|add:language.code|add:'.png' %}" alt=""> {{ language.name_local }} </a>
+										{% endfor %}
+								</div>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" href="{% url 'frontend:login_view' %}">Login <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" href="{% url 'frontend:register_view' %}">Registration <span class="sr-only">(current)</span></a>
+						</li>
+				</ul>
+		</div>
+	</nav>

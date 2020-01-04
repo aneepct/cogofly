@@ -1,0 +1,95 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+<div class="bgloginImage">
+    <div class="container">
+    	{% include "layout/navbar.html" %}
+        <div class="row">
+            <div class="col-12 loginBox">
+                <div class="logBox-dialog" role="document">
+                    <div class="logBox-content">
+												{% if messages %}
+													{% for message in messages %}
+															<div class="alert
+																	{% if message.tags == 'error' %}
+																	alert-danger
+																	{% else %}
+																	alert-{{ message.tags }}
+																	{% endif %}
+																	alert-dismissable">
+																			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+																			{{ message }}
+															</div>
+													{% endfor %}
+												{% endif %}
+                        <div class="logBox-header">
+                            <h5 class="logBox-title" id="examplelogBoxLabel"> Log In with your deatils </h5>
+                        </div>
+                        <div class="logBox-body">
+													<form action="{% url 'frontend:login' %}" method="post">{% csrf_token %}
+														{% for field in login_form %}
+																<div class="form-group">
+																	{{ field.errors }}
+																	{{ field.label_tag }} {{ field }}
+																	{% if field.help_text %}
+																	<p class="help">{{ field.help_text|safe }}</p>
+																	{% endif %}
+																</div>
+														{% endfor %}
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Remember me  </label>
+                                <a class="forgot" href="">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Log in</button>
+													</form>
+
+													<div class="orbox">
+															<hr>
+															<span class="orClass">or</span>
+													</div>
+
+													<ul class="socialLinks">
+														<li>
+																<a href="{% url 'social:begin' 'facebook' %}" type="button" class="btn-facebook">
+																		<i class="fa fa-facebook" aria-hidden="true"></i>
+																</a>
+														</li>
+														<li>
+																<a href="{% url 'social:begin' 'google-oauth2' %}" type="button" class="btn-google">
+																		<i class="fa fa-google" aria-hidden="true"></i>
+																</a>
+														</li>
+														<li>
+																<a href="{% url 'social:begin' 'twitter' %}" type="button" class="btn-twitter">
+																		<i class="fa fa-twitter" aria-hidden="true"></i>
+																</a>
+														</li>
+														<li>
+																<a href="{% url 'social:begin' 'instagram' %}" type="button" class="btn-instagram">
+																		<i class="fa fa-instagram" aria-hidden="true"></i>
+																</a>
+														</li>
+														<li>
+																<a href="{% url 'social:begin' 'linkedin-oauth2' %}" type="button" class="btn-linkedin">
+																		<i class="fa fa-linkedin" aria-hidden="true"></i>
+																</a>
+														</li>
+												</ul>
+
+													<hr>
+
+													<p>Don't have an account? <a href="{% url 'frontend:register_view' %}"> Sign up </a> </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
