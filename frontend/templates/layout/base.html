@@ -15,6 +15,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{% static 'res/lib/bootstrap/css/bootstrap.min.css' %}">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="{% static 'res/lib/owl-carousel/owl.carousel.css' %}">
@@ -35,11 +37,63 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script src="{% static 'res/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'res/js/jquery-3.4.1.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="{% static 'res/lib/bootstrap/js/bootstrap.min.js' %}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{% static 'res/lib/owl-carousel/owl.carousel.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.0/dist/latest/bootstrap-autocomplete.min.js"></script>
     <script src="{% static 'res/js/main.js' %}"></script>
+
+    <script>
+        $('.datepicker').datepicker({
+            startDate: '-3d'
+        });
+
+        function handleApiReady() {
+            $(document).ready(function () {
+                $('.gmaps-autocomplete').each(function(){
+                    var t=$(this)[0];
+                    new google.maps.places.Autocomplete(t, {});
+                    /* Trouv sur stackoverflow :
+                    * http://stackoverflow.com/
+                    * questions/11388251/google-autocomplete-enter-to-select
+                    * Quand on appuyait sur "entre" pour valider la slection, cela
+                    * envoyait le formulaire. Maintenant a semble ok :
+                    */
+                    google.maps.event.addDomListener(t, 'keydown', function(e) {
+                        if (parseInt(e.keyCode) === 13) {
+                            e.preventDefault();
+                        }
+                    });
+                });
+                /* trouv sur stackoverflow:
+                * http://stackoverflow.com/
+                * questions/15738259/disabling-chrome-autofill/
+                * En fait il faut l'attribut autocomplete="off"
+                * HACK : ce n'est plus "off", mais "false" !!!
+                */
+                $('input').each(function() {
+                    $(this).attr('autocomplete', 'false');
+                });
+                $('form').each(function() {
+                    $(this).attr('autocomplete', 'false');
+                });
+            });
+        }
+
+        if (typeof google === 'object' && typeof google.maps === 'object') {
+            handleApiReady();
+        } else {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = 'https://maps.googleapis.com/maps/api/js' +
+                    '?key=AIzaSyCc0zrgx2mk-YPqzUvvpv4anNNWbMMk9EQ' +
+                    '&libraries=places' +
+                    '&callback=handleApiReady';
+            document.body.appendChild(script);
+        }
+    </script>
 
 </body>
 </html>

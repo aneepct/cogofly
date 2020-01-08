@@ -111,3 +111,14 @@ def logout_view(request):
 @login_required(login_url='/')
 def home(request):
     return render(request, 'auth/home.html')
+
+
+def city_search(request):
+    return JsonResponse(
+        [
+            "Google Cloud Platform",
+            "Amazon AWS",
+            "Docker",
+            "Digital Ocean"
+        ], safe=False
+    )
