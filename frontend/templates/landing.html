@@ -8,128 +8,6 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 <div class="bgMainWrappImage">
-    <!-- Modal -->
-    <div class="modal fade logModal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"> Log In with your deatils </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert
-                                {% if message.tags == 'error' %}
-                                alert-danger
-                                {% else %}
-                                alert-{{ message.tags }}
-                                {% endif %}
-                                alert-dismissable">
-                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                    {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                    <form action="{% url 'frontend:login' %}" method="post">{% csrf_token %}
-                        {% for field in login_form %}
-                            <div class="form-group">
-                                {{ field.errors }}
-                                {{ field.label_tag }} {{ field }}
-                                {% if field.help_text %}
-                                <p class="help">{{ field.help_text|safe }}</p>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                            <a class="forgot" href="">Forgot password?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Log in</button>
-                    </form>
-
-                    <div class="orbox">
-                        <hr>
-                        <span class="orClass">or</span>
-                    </div>
-
-                    <a href="{% url 'social:begin' 'facebook' %}" type="button" class="btn btn-primary btn-facebook">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                        Log in with Facebook
-                    </a>
-                    <a href="{% url 'social:begin' 'google-oauth2' %}" type="button" class="btn btn-primary btn-google">
-                        <i class="fa fa-google" aria-hidden="true"></i>
-                        Log in with Google
-                    </a>
-
-                    <hr>
-
-                    <p>Don't have an account? <a href="#" data-toggle="modal" data-target="#RegistrationModal"> Register </a> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade logModal" id="RegistrationModal" tabindex="-1" role="dialog" aria-labelledby="RegistrationModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Register with your deatils </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert
-                            {% if message.tags == 'error' %}
-                            alert-danger
-                            {% else %}
-                            alert-{{ message.tags }}
-                            {% endif %}
-                            alert-dismissable">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                <form action="{% url 'frontend:register' %}" method="post">{% csrf_token %}
-                    {% for field in register_form %}
-                        <div class="form-group">
-                            {{ field.errors }}
-                            {{ field.label_tag }} {{ field }}
-                            {% if field.help_text %}
-                            <p class="help">{{ field.help_text|safe }}</p>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </form>
-
-                <div class="orbox">
-                    <hr>
-                    <span class="orClass">or</span>
-                    </div>
-
-                    <a href="#" type="button" class="btn btn-primary btn-facebook">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                        Continue with Facebook
-                    </a>
-
-                    <a href="#" type="button" class="btn btn-primary btn-google">
-                        <i class="fa fa-google" aria-hidden="true"></i>
-                        Continue with Google
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
 				{% include "layout/navbar.html" %}
@@ -140,31 +18,33 @@
                     <div class="title">
                         <h2>{% trans "FED UP OF... TRAVELLING ALONE?" %}</h2>
                     </div>
-                    <div class="formSection">
-                        <div class="form-row">
-                            <div class="form-group col-lg-3 ">
-                                <input type="text" class="form-control gmaps-autocomplete" id="inputCity" placeholder="Where do you want to go ?" autocomplete="off">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </div>
+                        <form action="{% url 'frontend:trip_search' %}" method="post">{% csrf_token %}
+                        <div class="formSection">
+                            <div class="form-row">
+                                <div class="form-group col-lg-3 ">
+                                    <input type="text" class="form-control gmaps-autocomplete" id="inputCity" placeholder="Where do you want to go ?" autocomplete="off">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
 
-                            <div class="form-group andOrGroup col-lg-1">
-                                <p>And / Or <span> * </span></p>
-                            </div>
+                                <div class="form-group andOrGroup col-lg-1">
+                                    <p>And / Or <span> * </span></p>
+                                </div>
 
-                            <div class="form-group col-lg-3 col-md-6">
-                                <input type="text" class="form-control datepicker" id="inputStart" placeholder="Beginning" data-date-format="mm/dd/yyyy">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <input type="text" class="form-control datepicker" id="inputStart" placeholder="Beginning" data-date-format="mm/dd/yyyy">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
 
-                            <div class="form-group col-lg-3 col-md-6">
-                                <input type="text" class="form-control datepicker" id="inputEnd" placeholder="End" data-date-format="mm/dd/yyyy">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                            </div>
-                            <div class="form-group col-lg-2 text-right col-md-12">
-                                <button type="submit" class="btn btn-primary"> Search </button>
+                                <div class="form-group col-lg-3 col-md-6">
+                                    <input type="text" class="form-control datepicker" id="inputEnd" placeholder="End" data-date-format="mm/dd/yyyy">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </div>
+                                <div class="form-group col-lg-2 text-right col-md-12">
+                                    <button type="submit" class="btn btn-primary"> Search </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     <h5> Break down borders together! </h5>
 
                     <p class="reservation">JOIN THE INTERNATIONAL COTRAVELLER's COMMUNITY AND CHOOSE WITH WHOM YOU GO AWAY... </p>
@@ -174,6 +54,69 @@
 
             </div>
         </div>
+    </div>
+</div>
+
+<div class="addTripSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="title textBlack">
+                    <h2> Add Trip  </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 text-center tripSlide">
+                <div id="tripSlide" class="owl-carousel">
+                    <div class="item">
+                        <div class="text">
+                            <p>
+                                Don’t be fazed by travelling any more, whether you want to go away for
+                                the weekend or just on a day out, and give your dreams a boost.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="text">
+                            <p>
+                                Don’t be fazed by travelling any more, whether you want to go away for
+                                the weekend or just on a day out, and give your dreams a boost.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="text">
+                            <p>
+                                Don’t be fazed by travelling any more, whether you want to go away for
+                                the weekend or just on a day out, and give your dreams a boost.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 text-center addTripImg">
+                <a href="">
+                    <img src="{% static 'res/img/add-trip.png' %}" alt="">
+                    <span>
+                        <i class="fa fa-plus fa-3x"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="p-text">
+                    <p> Cotravelers are looking for same projects... Help them to find you!  </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

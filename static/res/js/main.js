@@ -241,6 +241,40 @@ $(document).ready(function() {
 		owlpartners.trigger('owl.stop');
 	})
 
+
+	$("#tripSlide").owlCarousel({
+		items : 1,
+		slideSpeed : 1000,
+		itemsTablet: [768,1],
+		autoPlay : false,
+		pagination :true,
+		navigation : true,
+		navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		
+	});
+
+	$(".play").click(function(){
+		owlpartners.trigger('owl.play',2000); //owl.play event accept autoPlay speed as second parameter
+	})
+	$(".stop").click(function(){
+		owlpartners.trigger('owl.stop');
+	})
+
+	
+
+	
+	$(".searchimg").owlCarousel({
+		items : 1,
+		slideSpeed : 1000,
+		itemsTablet: [768,1],
+		itemsMobile: [479,1],
+		autoPlay : false,
+		pagination :true,
+		navigation : true,
+		navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+		
+	});
+
 	
 
 

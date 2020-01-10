@@ -46,7 +46,7 @@
     }
 
     .navbar {
-        padding: 15px 0px;
+        padding: 15px;
     }
 
 
@@ -185,18 +185,19 @@
         font-size: 12px;
     }
 
-    .navbar-light .navbar-toggler-icon{
+    .navbar-toggler-icon{
         background-image: none;
     }
 
-    .navbar-light .navbar-toggler-icon .fa{
+    .navbar-toggler-icon .fa{
         font-size: 26px;
         padding: 3px 0;
         color: #fff;
         cursor: pointer;
     }
 
-    .navbar-light .navbar-toggler{
+    .navbar-light .navbar-toggler,
+    .navbar-dark .navbar-toggler {
         border-color: rgb(255, 255, 255);
         border: 1px solid #fff;
         cursor: pointer;
@@ -205,6 +206,76 @@
     .navbar-nav .dropdown-menu {
         padding: 0;
         min-width: auto;
+    }
+
+
+    .logBox-dialog {
+        width: 100%;
+    }
+
+    .socialLinks li {
+        margin: 0 3px;
+    }
+    
+    .socialLinks li a {
+        width: 37px;
+        height: 37px;
+        padding: 9px;
+    }
+
+    .socialLinks li a .fa {
+        font-size: 18px; 
+    }
+
+
+
+    .searchPage .searchList .searchitem  {
+        width: 100%;
+    }
+
+    .addTripSection {
+        padding: 40px 0;
+    }
+
+
+    .addTripSection .title h2 {
+        margin-bottom: 0;
+    }
+
+    .addTripImg a img {
+        width: 100%;
+    }
+
+    .tripSlide .item {
+        padding: 20px;
+    }
+
+    .tripSlide .owl-theme .owl-controls .owl-buttons .owl-prev {
+        left: -15px;
+    }
+
+    .tripSlide .owl-theme .owl-controls .owl-buttons .owl-next {
+        right: -15px;
+    }
+
+
+    .tripSlide .item .text p {
+        font-size: 14px;
+        line-height: 20px;
+        margin: 15px 0;
+    }
+
+    .addTripImg a {
+        margin-top: 25px;
+    }
+
+    .addTripImg a span {
+        font-size: 20px;
+    }
+
+    .addTripSection .p-text {
+        font-size: 14px;
+        margin: 20px 0 0 0;
     }
     
 
@@ -279,9 +350,42 @@
         min-height: 310px;
     }
 
-    .navbar-light .navbar-toggler-icon .fa{
+    .navbar-light .navbar-toggler-icon .fa,
+    .navbar-dark .navbar-toggler-icon .fa{
         font-size: 26px;
         padding: 3px 0;
         color: #fff;
+    }
+
+    .navbar-light .navbar-toggler,
+    .navbar-dark .navbar-toggler {
+        border-color: rgb(255, 255, 255);
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
+
+
+    
+    .logBox-dialog {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .searchPage .searchList .searchitem {
+        width: 50%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+
+    .loginBox .orClass {
+        right:34%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 425px) {
+
+    .loginBox .orClass {
+        right:38%;
     }
 }

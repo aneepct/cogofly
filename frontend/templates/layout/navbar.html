@@ -6,7 +6,7 @@
 	{% get_current_language as LANGUAGE_CODE %}
 
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="{% url 'frontend:index' %}">
 				<img src="{% static 'res/img/cogofly-logo.png' %}" alt="cogofly-logo">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

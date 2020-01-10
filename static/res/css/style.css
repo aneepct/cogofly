@@ -15,6 +15,11 @@ body{
     margin-bottom: 15px;
 }
 
+.form-control {
+    box-shadow: none;
+    outline: none;
+}
+
 .btn.focus, .btn:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus, 
 .btn-primary:not(:disabled):not(.disabled):active:focus, 
@@ -176,6 +181,87 @@ a.goodToKnow {
     bottom: 30px;
     color: #fff;
 }
+
+
+.addTripSection {
+    padding: 80px 0;
+}
+
+
+.addTripSection .title h2 {
+    margin-bottom: 35px;
+}
+
+.tripSlide .item {
+    padding: 60px 110px;
+}
+
+
+.tripSlide .item .text p {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 15px 0;
+}
+
+.addTripSection .owl-carousel {
+    margin: 0;
+}
+
+.tripSlide .owl-theme .owl-controls .owl-buttons div {
+    background-color: transparent;
+}
+
+.tripSlide .owl-theme .owl-controls .owl-buttons .fa {
+    font-size: 40px;
+}
+
+
+.tripSlide .owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: 30px;
+}
+
+.tripSlide .owl-theme .owl-controls .owl-buttons .owl-next {
+    right: 30px;
+}
+
+
+.tripSlide .owl-theme .owl-controls .owl-page span {
+    background-color: #d4d4d4;
+    border: 2px solid #fff;
+}
+
+.tripSlide .owl-theme .owl-controls {
+    margin: -20px 0 0 0;
+}
+
+.addTripSection .p-text  {
+    font-size: 16px;
+    margin:  50px 0 20px 0;
+}
+
+
+.addTripImg a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addTripImg a span {
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+    opacity: 0.9;
+}
+.addTripImg:hover span {
+    opacity: 1;
+}
+
+.addTripImg a span .fa {
+    display: block;
+}
+
 
 .bgConcept {
     background-image: url('../img/concept.png');
@@ -826,4 +912,157 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0000e', end
 
 .socialLinks li a .fa {
     font-size: 24px;
+}
+
+.navbar-dark {
+    background-color: #003149;
+}
+
+/*   searchPage css   */
+
+
+.searchFormInput {
+    margin: 5px 0 30px 0;
+    position: relative;
+}
+.searchFormInput .form-control {
+    padding-left: 35px;
+}
+.searchFormInput .fa {
+    position: absolute;
+    font-size: 16px;
+    top: 10px;
+    left: 10px;
+}
+
+.searchPage {
+    padding: 30px 0;
+}
+
+.searchPage .title h4 {
+    padding-left: 10px;
+}
+
+.searchPage .owl-carousel  {
+    margin: 0;
+}
+
+.searchPage .searchList {
+    font-size: 0;
+}
+
+.searchPage .searchList .searchitem {
+    display: inline-block;
+    width: 25%;
+    padding: 10px;
+    position: relative;
+}
+
+.searchPage .searchList .searchitem img {
+    width: 100%;
+}
+
+.searchPage .searchList .searchitem a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.searchPage .searchList .searchitem .rating {
+    float: right;
+    padding: 1px;
+}
+
+.searchPage .searchList .searchitem .rating .fa,
+.searchPage .searchList .searchitem .rating span{
+    font-size: 14px;
+}
+
+.searchPage .searchList .searchitem .rating .fa {
+    margin-right: 5px;
+    color: #42a2d2;
+}
+
+
+.searchPage .searchList .searchitem .roomType {
+    font-size: 14px;
+    margin: 2px 0 5px;
+}
+
+.searchPage .searchList .searchitem h5 {
+    font-size: 15px;
+    margin: 7px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-weight: 400 ;
+    line-height: 20px;
+    max-height: 20px;    
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+
+.searchPage .searchList .searchitem h6 {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.searchPage .searchList .searchitem h6 span {
+    font-weight: 400;
+}
+
+
+.searchPage .searchList .searchitem p  {
+    font-size: 14px;
+    color: #717171 ;
+}
+
+
+.searchitem .owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: 5px;
+}
+
+.searchitem .owl-theme .owl-controls .owl-buttons .owl-next {
+    right: 5px;
+}
+
+.searchitem .owl-theme .owl-controls .owl-buttons div {
+    padding: 0px 11px;
+}
+
+.searchitem .owl-theme .owl-controls .owl-buttons div {
+    opacity: 0.7;
+}
+
+.searchitem .owl-theme .owl-buttons {
+    display: none;
+}
+
+.searchitem:hover .owl-theme .owl-buttons {
+    display: block;
+    transition-duration: 2s;
+}
+
+
+.searchitem .owl-pagination {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%);
+}
+
+.searchitem .owl-theme .owl-controls .owl-page span {
+    margin: 5px 2px;    
+    width: 8px;
+    height: 8px;
+    opacity: 0.5;
+}
+
+.searchitem .owl-theme .owl-controls .owl-page.active span {
+    background-color:#fff;
+    opacity: 1;
+    border: none;
 }

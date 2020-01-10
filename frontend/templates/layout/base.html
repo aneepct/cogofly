@@ -93,6 +93,17 @@
                     '&callback=handleApiReady';
             document.body.appendChild(script);
         }
+
+        $("#tripSlide").owlCarousel({
+            items : 1,
+            slideSpeed : 1000,
+            itemsTablet: [768,1],
+            autoPlay : false,
+            pagination :true,
+            navigation : true,
+            navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+            
+        });
     </script>
 
 </body>
